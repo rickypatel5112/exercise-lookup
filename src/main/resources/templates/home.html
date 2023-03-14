@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="" th:href="@{/css/home.css}" />
+<!--    <title th:text="${exercises.name}"></title>-->
+</head>
+<body>
+<h1>Exercise List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Muscle</th>
+        <th>Equipment</th>
+        <th>Difficulty</th>
+        <th>Instructions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="exercise : ${exercises}">
+        <td th:text="${exercise.name}"></td>
+        <td th:text="${exercise.type}"></td>
+        <td th:text="${exercise.muscle}"></td>
+        <td th:text="${exercise.equipment}"></td>
+        <td th:text="${exercise.difficulty}"></td>
+        <td th:text="${exercise.instructions}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
