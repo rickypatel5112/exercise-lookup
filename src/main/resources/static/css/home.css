@@ -1,0 +1,28 @@
+body{
+background : #e2e2e2
+}
+
+/* Center the table */
+table {
+  margin: 0 auto;
+  width: 80%;
+}
+
+/* Style the table header */
+thead th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: left;
+  padding: 8px;
+}
+
+/* Style the table body */
+tbody td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Alternate background colors for the rows */
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
