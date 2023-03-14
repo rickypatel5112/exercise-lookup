@@ -3,19 +3,21 @@ package com.fitness.FitnessApp.Controller;
 import com.fitness.FitnessApp.Model.Exercise;
 import com.fitness.FitnessApp.Service.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
+@CrossOrigin(origins = "*")
 public class ExerciseController {
 
     @Autowired
     private ExerciseService exerciseService;
 
     @GetMapping("/")
-    public Exercise[] getExercise(@RequestParam(defaultValue = "") String exName,
+    public String getExercise(@RequestParam(defaultValue = "") String exName,
                                 @RequestParam(defaultValue = "") String exType,
                                 @RequestParam(defaultValue = "") String muscle,
                                 @RequestParam(defaultValue = "") String difficulty,
@@ -23,7 +25,7 @@ public class ExerciseController {
                 Exercise[] exercises = exerciseService.getExercises(exName, exType, muscle, difficulty);
                 model.addAttribute("exercises", exercises);
 
-                return exercises;
+                return "home";
     }
 
 //    @GetMapping("/user2")
