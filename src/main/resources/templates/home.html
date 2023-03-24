@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -18,8 +18,23 @@
     <li><a href="#">About</a></li>
     <li><a href="#">Exercises</a></li>
     <li><a href="#">Saved</a></li>
-    <li><a href="#">Contact</a></li>
+    <li>
+    <a sec:authorize="isAuthenticated()" th:href="@{/logout}">
+        <span>LogOut</span>
+    </a>
+    <a sec:authorize="isAnonymous()" th:href="@{/login}">
+        <span>LogIn</span>
+    </a>
+    </li>
+
 </ul>
+
+<!--        <div sec:authorize="isAuthenticated()">-->
+<!--            <a th:href="@{/logout}">LogOut</a>-->
+<!--        </div>-->
+<!--        <div sec:authorize="isAnonymous()">-->
+<!--            <a th:href="@{/login}">LogIn</a>-->
+<!--        </div>-->
     </header>
     <div class="content">
         <div class="contentBx">
