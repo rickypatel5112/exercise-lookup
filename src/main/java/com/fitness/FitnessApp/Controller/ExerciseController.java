@@ -2,8 +2,8 @@ package com.fitness.FitnessApp.Controller;
 
 import com.fitness.FitnessApp.Model.Exercise;
 import com.fitness.FitnessApp.Service.ExerciseService;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,14 +26,11 @@ public class ExerciseController {
                               @RequestParam(name = "exType", defaultValue = "") String exType,
                               @RequestParam(name = "muscle", defaultValue = "") String muscle,
                               @RequestParam(name = "difficulty", defaultValue = "") String difficulty,
-                              @NotNull Model model){
+                              @NonNull Model model){
 
                 Exercise[] exercises = exerciseService.getExercises(exName, exType, muscle, difficulty);
                 model.addAttribute("exercises", exercises);
 
-                for(Exercise ex : exercises){
-                    System.out.println("Muscle: " + ex.getMuscle());
-                }
                 return "search";
     }
 
