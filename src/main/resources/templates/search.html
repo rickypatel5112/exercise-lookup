@@ -32,6 +32,7 @@
 <table th:if="${not #lists.isEmpty(exercises)}">
     <thead>
     <tr>
+        <th></th>
         <th>Name</th>
         <th>Type</th>
         <th>Muscle</th>
@@ -42,6 +43,7 @@
     </thead>
     <tbody>
     <tr th:each="exercise : ${exercises}">
+        <td><button>Save</button></td>
         <td th:text="${exercise.name}"></td>
         <td th:text="${exercise.type}"></td>
         <td th:text="${exercise.muscle}"></td>
