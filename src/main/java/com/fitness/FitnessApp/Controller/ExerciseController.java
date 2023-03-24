@@ -3,38 +3,51 @@ package com.fitness.FitnessApp.Controller;
 import com.fitness.FitnessApp.Model.Exercise;
 import com.fitness.FitnessApp.Service.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@CrossOrigin(origins = "*")
 public class ExerciseController {
 
     @Autowired
     private ExerciseService exerciseService;
 
     @GetMapping("/")
-    public String getExercise(@RequestParam(defaultValue = "") String exName,
-                                @RequestParam(defaultValue = "") String exType,
-                                @RequestParam(defaultValue = "") String muscle,
-                                @RequestParam(defaultValue = "") String difficulty,
-                                Model model){
+    public String getHomePage(){
+        return "home";
+    }
+
+    @PostMapping("/search")
+    public String getExercise(@RequestParam(name = "exName", defaultValue = "") String exName,
+                              @RequestParam(name = "exType", defaultValue = "") String exType,
+                              @RequestParam(name = "muscle", defaultValue = "") String muscle,
+                              @RequestParam(name = "difficulty", defaultValue = "") String difficulty,
+                              @NonNull Model model){
+
                 Exercise[] exercises = exerciseService.getExercises(exName, exType, muscle, difficulty);
                 model.addAttribute("exercises", exercises);
 
-                return "home";
+                return "search";
     }
 
-//    @GetMapping("/user2")
-//    public Object ggf(OAuth2AuthenticationToken oAuth2AuthenticationToken){
-//        if(oAuth2AuthenticationToken != null && oAuth2AuthenticationToken.isAuthenticated())
+    @GetMapping("/search")
+    public String showHtml(){
+        return "search";
+    }
+
+//    @GetMapping("/{userName}")
+//    public String ggf(OAuth2AuthenticationToken oAuth2AuthenticationToken){
 //
-//        return oAuth2AuthenticationToken.getPrincipal().getAttributes().get("email").toString();
-//        else{
-//            return "login";
-//        }
+//        String email = oAuth2AuthenticationToken.getPrincipal().getAttributes().get("email").toString();
+//
+//        String userName = email.split("@")[0];
+//
+//        System.out.println(userName);
+//
+//        return "dashboard";
 //    }
 }

@@ -1,28 +1,137 @@
-body{
-background : #e2e2e2
+ 
+
+@import url('https://fonts.googleapis.com/css?family=Poppins : 200, 300,400,500, 600, 700,800, 900&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+/*font-family: 'Poppins', sans-serif;*/
 }
 
-/* Center the table */
-table {
-  margin: 0 auto;
-  width: 80%;
+section{
+position: relative;
+width: 100%;
+min-height: 100vh;
+background: url(bg3.jpeg);
+background-size: cover;
+background-position: center;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+padding: 100px;
 }
 
-/* Style the table header */
-thead th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-  text-align: left;
-  padding: 8px;
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Style the table body */
-tbody td {
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
+header .logo{
+    position: relative;
+    font-size: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
 }
 
-/* Alternate background colors for the rows */
-tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
+header .navigation{
+    position: relative;
+    display: flex;
 }
+
+header .navigation li{
+    list-style: none;
+}
+
+header .navigation li a{
+    display: inline-block;
+    color: #fff;
+    margin-right: 40px;
+    text-decoration: none;
+}
+
+header .navigation li a:hover{
+    color: #0751b3;
+}
+
+.content{
+    max-width: 600px;
+}
+
+.content .contentBx h2{
+    font-size: 4em;
+    color: #fff;
+    line-height: 1em;
+}
+
+.content .contentBx p{
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 300;
+    margin: 20px 0;
+}
+
+.content .contentBx a{
+    display: inline-block;
+    padding: 10px 30px;
+    background: #03a9f4;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/*@media(max-width: 991px){
+    header{
+        padding: 15px 40px;
+    }
+    section{
+        padding: 40px;
+        background: url(bg3.jpeg);
+        background-size: cover;
+        background-position: center;
+    }
+    .content .contentBx h2{
+        font-size: 2.5em;
+    }
+    .content .contentBx p{
+        font-size: 1em;
+    }
+    header .navigation{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #000;
+        z-index: 10;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    header .navigation li a{
+        font-size: 24px;
+        margin: 10px 0;
+    }
+    .toggleMenu{
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background: url(menu.png);
+        background-position: center;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        z-index: 11;
+    }
+}*/

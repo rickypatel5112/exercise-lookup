@@ -3,8 +3,11 @@ package com.fitness.FitnessApp.Model;
 import com.fasterxml.jackson.annotation.*;
 
 import javax.annotation.Generated;
+//import javax.persistence.Entity;
+//import javax.persistence.Id;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -16,9 +19,11 @@ import java.util.Map;
         "instructions"
 })
 @Generated("jsonschema2pojo")
+//@Entity
 public class Exercise {
 
     @JsonProperty("name")
+//    @Id
     private String name;
     @JsonProperty("type")
     private String type;
@@ -33,62 +38,62 @@ public class Exercise {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
-    @JsonProperty("name")
+//    @JsonProperty("name")
     public String getName() {
         return name;
     }
 
-    @JsonProperty("name")
+//    @JsonProperty("name")
     public void setName(String name) {
         this.name = name;
     }
 
-    @JsonProperty("type")
+//    @JsonProperty("type")
     public String getType() {
         return type;
     }
 
-    @JsonProperty("type")
+//    @JsonProperty("type")
     public void setType(String type) {
         this.type = type;
     }
 
-    @JsonProperty("muscle")
+//    @JsonProperty("muscle")
     public String getMuscle() {
         return muscle;
     }
 
-    @JsonProperty("muscle")
+//    @JsonProperty("muscle")
     public void setMuscle(String muscle) {
         this.muscle = muscle;
     }
 
-    @JsonProperty("equipment")
+//    @JsonProperty("equipment")
     public String getEquipment() {
         return equipment;
     }
 
-    @JsonProperty("equipment")
+//    @JsonProperty("equipment")
     public void setEquipment(String equipment) {
         this.equipment = equipment;
     }
 
-    @JsonProperty("difficulty")
+//    @JsonProperty("difficulty")
     public String getDifficulty() {
         return difficulty;
     }
 
-    @JsonProperty("difficulty")
+//    @JsonProperty("difficulty")
     public void setDifficulty(String difficulty) {
         this.difficulty = difficulty;
     }
 
-    @JsonProperty("instructions")
+//    @JsonProperty("instructions")
     public String getInstructions() {
         return instructions;
     }
 
-    @JsonProperty("instructions")
+//    @JsonProperty("instructions")
     public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
@@ -110,9 +115,9 @@ public class Exercise {
                 '}';
     }
 
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+//    @JsonAnySetter
+//    public void setAdditionalProperty(String name, Object value) {
+//        this.additionalProperties.put(name, value);
+//    }
 
 }
