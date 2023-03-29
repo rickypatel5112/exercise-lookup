@@ -63,19 +63,9 @@ public class Exercise {
         return muscle;
     }
 
-//    @JsonProperty("muscle")
-    public void setMuscle(String muscle) {
-        this.muscle = muscle;
-    }
-
 //    @JsonProperty("equipment")
     public String getEquipment() {
         return equipment;
-    }
-
-//    @JsonProperty("equipment")
-    public void setEquipment(String equipment) {
-        this.equipment = equipment;
     }
 
 //    @JsonProperty("difficulty")
@@ -83,25 +73,10 @@ public class Exercise {
         return difficulty;
     }
 
-//    @JsonProperty("difficulty")
-    public void setDifficulty(String difficulty) {
-        this.difficulty = difficulty;
-    }
-
 //    @JsonProperty("instructions")
-    public String getInstructions() {
-        return instructions;
-    }
-
-//    @JsonProperty("instructions")
-    public void setInstructions(String instructions) {
-        this.instructions = instructions;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
+public String getInstructions() {
+    return instructions;
+}
 
     @Override
     public String toString() {
@@ -114,10 +89,4 @@ public class Exercise {
                 ", instructions='" + instructions + '\'' +
                 '}';
     }
-
-//    @JsonAnySetter
-//    public void setAdditionalProperty(String name, Object value) {
-//        this.additionalProperties.put(name, value);
-//    }
-
 }
