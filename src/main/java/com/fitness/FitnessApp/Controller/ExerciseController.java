@@ -50,6 +50,7 @@ public class ExerciseController {
     }
 
     @GetMapping("/user/{userName}")
+    @ResponseBody
     public String userSavedItems(@PathVariable("userName") String userName, Model model) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -58,7 +59,7 @@ public class ExerciseController {
             String authUserName = authentication.getName().split("@")[0];
 
             if (userName.equals(authUserName)) {
-                return "saved-items";
+                return "saved-items"+userName;
             } else {
 
                 return "error";
