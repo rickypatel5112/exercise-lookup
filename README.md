@@ -21,3 +21,7 @@ The [in-progress] project allows users to search exercises on given parameters:
 
 ### Reference Documentation
 Currently, the only endpoint available is '/'
+
+### My next steps:
+* Configure the API as a resource server instead of a client
+* Build the frontend using ReactJS
